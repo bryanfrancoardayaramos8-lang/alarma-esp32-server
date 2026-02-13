@@ -20,8 +20,6 @@ def alerta():
         "text": msg
     }
 
-    requests.post(url, data=data)
-    return "OK"
+    r = requests.post(url, data=data)
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+    return r.text
